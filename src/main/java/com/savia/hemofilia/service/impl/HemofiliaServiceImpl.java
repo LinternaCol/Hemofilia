@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class HemofiliaServiceImpl implements HemofiliaService {
@@ -98,7 +99,9 @@ public class HemofiliaServiceImpl implements HemofiliaService {
 
     }
 
-
-
-
+    @Override
+    public List<HemofiliaModel> listHemofiliaModels(){
+        System.out.println(hemofiliaRepository.findAll().get(1).getActividadCoagulanteFactor());
+            return  hemofiliaRepository.findAll();
+    }
 }
